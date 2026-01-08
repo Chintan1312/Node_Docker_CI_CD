@@ -1,0 +1,22 @@
+name: Node TS Docker CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker Image
+        run: docker build -t node-ts-ci-cd .
+
+      - name: Run Container
+        run: docker run -d -p 3000:3000 node-ts-ci-cd
