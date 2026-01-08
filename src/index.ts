@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 const app = express();
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("TypeScript Docker CI/CD v2 🔥");
+  res.send("TypeScript Docker CI/CD v2 Railway 🔥");
 });
 
 app.listen(3000, () => {
